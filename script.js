@@ -110,19 +110,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //image slide
 
-const prevBtn = document.getElementById("carouselPrev");
-const nextBtn = document.getElementById("carouselNext");
-const track = document.getElementById("carouselWrapper");
+const carouselWrapper = document.getElementById("carouselWrapper");
+const totalSlides = carouselWrapper.children.length;
+let currentIndex = 0;
 
-let currentSlide = 0;
-const maxSlides = 3;
+function updateCarousel() {
+  carouselWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
 
-nextBtn.addEventListener("click", () => {
-  currentSlide = (currentSlide + 1) % maxSlides;
-  track.style.marginLeft = `-${currentSlide * 100}vw`;
+document.getElementById("carouselNext").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateCarousel();
 });
 
-prevBtn.addEventListener("click", () => {
-  currentSlide = (currentSlide - 1 + maxSlides) % maxSlides;
-  track.style.marginLeft = `-${currentSlide * 100}vw`;
+document.getElementById("carouselPrev").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+  updateCarousel();
 });
