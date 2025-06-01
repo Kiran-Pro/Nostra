@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact us</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body style="font-family: 'Poppins', sans-serif; margin: 0; padding: 0">
+    <!--nav-->
+    <nav
+      class="flex items-center justify-between p-4 bg-white sticky top-0 z-10"
+    >
+      <h1 class="font-bold text-xl md:text-2xl lg:text-3xl">
+        <a href="./index.html"> Nostra </a>
+      </h1>
+
+      <ul
+        class="hidden md:flex gap-4 md:gap-10 lg:gap-16 text-sm md:text-base lg:text-lg px-2"
+      >
+        <li>
+          <a class="hover:underline hover:text-black" href="./index.html"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            class="hover:underline hover:text-black"
+            href="./index.html#new_arrival"
+            >New Arrival</a
+          >
+        </li>
+        <li>
+          <a
+            class="hover:underline hover:text-black"
+            href="./index.html#most_wanted"
+            >Most Wanted</a
+          >
+        </li>
+        <li>
+          <a class="hover:underline hover:text-black" href="./collections.html"
+            >Collections</a
+          >
+        </li>
+        <li>
+          <a class="hover:underline hover:text-black" href="./contactUs.html"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+
+      <div id="menu" class="md:hidden text-xl">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <!-- Sidebar -->
+      <div
+        id="mobileMenu"
+        class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-30"
+      >
+        <button
+          id="closeBtn"
+          aria-label="Close menu"
+          class="text-3xl p-4 focus:outline-none"
+        >
+          &times;
+        </button>
+        <ul class="mt-4 flex flex-col space-y-4 text-lg px-6">
+          <li><a href="./index.html" class="hover:underline">Home</a></li>
+          <li>
+            <a href="#new_arrival" class="hover:underline">New Arrival</a>
+          </li>
+          <li>
+            <a href="#most_wanted" class="hover:underline">Most Wanted</a>
+          </li>
+          <li>
+            <a href="./collections.html" class="hover:underline">Collections</a>
+          </li>
+          <li>
+            <a href="./contactUs.html" class="hover:underline">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--Contact form-->
+    <div
+      class="p-4 mx-auto max-w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl"
+      style="background-color: #1d232c; color: white"
+    >
+      <h1
+        class="text-xl md:text-2xl lg:text-3xl font-semibold text-center mb-6 text-white"
+      >
+        Contact us
+      </h1>
+      <form class="mt-8 space-y-5">
+        <div>
+          <label class="text-sm text-white font-medium mb-2 block">Name</label>
+          <input
+            type="text"
+            placeholder="Enter Name"
+            class="w-full py-2.5 px-4 text-black bg-gray-100 border border-gray-200 focus:border-slate-900 focus:bg-white text-sm outline-none transition-all rounded"
+          />
+        </div>
+        <div>
+          <label class="text-sm text-white font-medium mb-2 block">Email</label>
+          <input
+            type="email"
+            placeholder="Enter Email"
+            class="w-full py-2.5 px-4 text-black bg-gray-100 border border-gray-200 focus:border-slate-900 focus:bg-white text-sm outline-none transition-all rounded"
+          />
+        </div>
+        <div>
+          <label class="text-sm text-white font-medium mb-2 block"
+            >Subject</label
+          >
+          <input
+            type="text"
+            placeholder="Enter Subject"
+            class="w-full py-2.5 px-4 text-black bg-gray-100 border border-gray-200 focus:border-slate-900 focus:bg-white text-sm outline-none transition-all rounded"
+          />
+        </div>
+        <div>
+          <label class="text-sm text-white font-medium mb-2 block"
+            >Message</label
+          >
+          <textarea
+            placeholder="Enter Message"
+            rows="4"
+            class="w-full px-4 py-2 text-black bg-gray-100 border border-gray-200 focus:border-slate-900 focus:bg-white text-sm outline-none transition-all rounded"
+          ></textarea>
+        </div>
+        <button
+          type="button"
+          class="mt-8 text-black bg-white hover:bg-gray-400 text-sm px-4 py-2 w-full focus:outline-none cursor-pointer rounded"
+        >
+          Send
+        </button>
+      </form>
+    </div>
+
+    <!--news-->
+    <div
+      class="flex flex-col items-center justify-center gap-2 my-5 mx-auto max-w-md"
+    >
+      <h1 class="font-bold lg:text-3xl md:text-xl">Join our News Letter</h1>
+      <p class="text-xs md:text-xl lg:text-2xl text-center max-w-2xl">
+        Signup for our email newspaper to get exclusive discounts, updates, and
+        more
+      </p>
+      <input
+        type="text"
+        class="w-full max-w-3xl border-2 border-black px-2 py-1 rounded"
+        placeholder="Enter your email"
+      />
+      <button
+        class="text-white text-xs md:text-sm p-2 rounded w-full max-w-3xl"
+        style="background-color: #1d232c"
+      >
+        Subscribe →
+      </button>
+    </div>
+
+    <!--Footer-->
+
+    <div
+      style="background-color: #1d232c"
+      class="text-white p-8 flex flex-col gap-6"
+    >
+      <div>
+        <h1 class="font-bold text-sm md:text-base">Nostra</h1>
+        <p class="text-xs md:text-sm">Not Just Fashion - A Movement</p>
+      </div>
+      <div class="flex gap-10 text-sm md:text-3xl justify-start">
+        <i
+          class="fa-brands fa-square-instagram cursor-pointer hover:text-gray-400"
+        ></i>
+        <i
+          class="fa-brands fa-square-twitter cursor-pointer hover:text-gray-400"
+        ></i>
+        <i class="fa-brands fa-facebook cursor-pointer hover:text-gray-400"></i>
+      </div>
+      <p class="text-xs md:text-sm text-center md:text-right">
+        &copy; 2025 Nostra.com
+      </p>
+    </div>
+    <script src="./contact.js"></script>
+  </body>
+</html>

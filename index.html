@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nostra</title>
+    <!--Tailwind Css-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body style="font-family: 'Poppins', sans-serif; margin: 0; padding: 0">
+    <!--Offer-X-->
+    <div
+      id="offer"
+      style="background-color: #1d232c"
+      class="text-white p-2 text-xl md:text-2xl md:py-3 flex items-center justify-center px-1 gap-7"
+    >
+      <p class="text-sm">Sign up and <b>GET 20% OFF</b> for your first order</p>
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+
+    <!--Navbar-->
+
+    <nav
+      class="flex items-center justify-between p-4 bg-white sticky top-0 z-50"
+    >
+      <h1 class="font-bold text-xl md:text-2xl lg:text-3xl">Nostra</h1>
+
+      <ul
+        class="hidden md:flex gap-4 md:gap-10 lg:gap-16 text-sm md:text-base lg:text-lg px-2"
+      >
+        <li>
+          <a class="hover:underline hover:text-black" href="./index.html"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a class="hover:underline hover:text-black" href="#new_arrival"
+            >New Arrival</a
+          >
+        </li>
+        <li>
+          <a class="hover:underline hover:text-black" href="#most_wanted"
+            >Most Wanted</a
+          >
+        </li>
+        <li>
+          <a class="hover:underline hover:text-black" href="./collections.html"
+            >Collections</a
+          >
+        </li>
+        <li>
+          <a class="hover:underline hover:text-black" href="./contactUs.html"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+
+      <div id="menu" class="md:hidden text-xl">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <!-- Sidebar -->
+      <div
+        id="mobileMenu"
+        class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-30"
+      >
+        <button
+          id="closeBtn"
+          aria-label="Close menu"
+          class="text-3xl p-4 focus:outline-none"
+        >
+          &times;
+        </button>
+        <ul class="mt-4 flex flex-col space-y-4 text-lg px-6">
+          <li><a href="./index.html" class="hover:underline">Home</a></li>
+          <li>
+            <a href="#new_arrival" class="hover:underline">New Arrival</a>
+          </li>
+          <li>
+            <a href="#most_wanted" class="hover:underline">Most Wanted</a>
+          </li>
+          <li>
+            <a href="./collections.html" class="hover:underline">Collections</a>
+          </li>
+          <li>
+            <a href="./contactUs.html" class="hover:underline">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!--Container-->
+
+    <div class="mx-6 items-center justify-center">
+      <!--Slide-->
+      <div class="relative overflow-hidden rounded-lg">
+        <!-- Slide Wrapper -->
+        <div
+          id="carouselWrapper"
+          class="flex transition-all duration-500"
+          style="margin-left: 0vw; width: 300vw"
+        >
+          <img
+            src="./assets/carousel/one.png"
+            alt="Slide 1"
+            class="w-screen object-cover md:h-screen"
+            style="object-position: center 30%"
+          />
+          <img
+            src="./assets/carousel/two.jpg"
+            alt="Slide 2"
+            class="w-screen object-cover md:h-screen"
+            style="object-position: center 30%"
+          />
+          <img
+            src="./assets/carousel/three.jpg"
+            alt="Slide 2"
+            class="w-screen object-cover md:h-screen"
+            style="object-position: center 30%"
+          />
+        </div>
+
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+
+        <!-- Centered Text & Button -->
+        <div
+          class="absolute inset-0 z-20 flex flex-col items-center justify-center text-white text-center px-4"
+        >
+          <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold">
+            Refresh Your Wardrobe with
+          </h1>
+          <p class="text-base sm:text-lg md:text-2xl mt-3">
+            Our Latest Summer Arrivals
+          </p>
+          <button
+            class="mt-6 px-6 py-2 bg-white text-black font-semibold rounded hover:bg-gray-300 transition-colors"
+          >
+            Shop Now <i class="fa-solid fa-arrow-right ml-2"></i>
+          </button>
+        </div>
+
+        <!-- Left Arrow -->
+        <button
+          id="carouselPrev"
+          class="absolute top-1/2 left-4 transform -translate-y-1/2 z-30 text-white text-3xl bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-75"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <!-- Right Arrow -->
+        <button
+          id="carouselNext"
+          class="absolute top-1/2 right-4 transform -translate-y-1/2 z-30 text-white text-3xl bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-75"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <!--Brand-->
+      <div class="my-7">
+        <h1 class="font-bold text-xl my-5 lg:text-2xl">Brands</h1>
+        <div
+          class="flex items-center text-center justify-between gap-4 overflow-x-auto md:overflow-visible flex-nowrap md:flex-wrap"
+        >
+          <div class="flex flex-col items-center min-w-fit">
+            <img
+              src="./assets/brand/adidas.png"
+              alt="adidas"
+              class="w-4 md:w-10 lg:w-14 xl:w-20"
+            />
+            <p class="text-xs md:text-sm lg:text-base xl:text-lg">Adidas</p>
+          </div>
+          <div class="flex flex-col items-center min-w-fit">
+            <img
+              src="./assets/brand/behance.png"
+              alt="behance"
+              class="w-4 md:w-10 lg:w-14 xl:w-20"
+            />
+            <p class="text-xs md:text-sm lg:text-base xl:text-lg">Behance</p>
+          </div>
+          <div class="flex flex-col items-center min-w-fit">
+            <img
+              src="./assets/brand/leaves.png"
+              alt="leaves"
+              class="w-4 md:w-10 lg:w-14 xl:w-20"
+            />
+            <p class="text-xs md:text-sm lg:text-base xl:text-lg">Leaves</p>
+          </div>
+          <div class="flex flex-col items-center min-w-fit">
+            <img
+              src="./assets/brand/simple.png"
+              alt="simple"
+              class="w-4 md:w-10 lg:w-14 xl:w-20"
+            />
+            <p class="text-xs md:text-sm lg:text-base xl:text-lg">Simple</p>
+          </div>
+          <div class="flex flex-col items-center min-w-fit">
+            <img
+              src="./assets/brand/twitch.png"
+              alt="twitch"
+              class="w-4 md:w-10 lg:w-14 xl:w-20"
+            />
+            <p class="text-xs md:text-sm lg:text-base xl:text-lg">Twitch</p>
+          </div>
+          <div class="flex flex-col items-center min-w-fit">
+            <img
+              src="./assets/brand/adidas.png"
+              alt="adidas"
+              class="w-4 md:w-10 lg:w-14 xl:w-20"
+            />
+            <p class="text-xs md:text-sm lg:text-base xl:text-lg">Adidas</p>
+          </div>
+          <div class="flex flex-col items-center min-w-fit">
+            <img
+              src="./assets/brand/behance.png"
+              alt="behance"
+              class="w-4 md:w-10 lg:w-14 xl:w-20"
+            />
+            <p class="text-xs md:text-sm lg:text-base xl:text-lg">Behance</p>
+          </div>
+        </div>
+      </div>
+
+      <!--Customer experience-->
+
+      <div class="my-7">
+        <div class="flex flex-col md:flex-row gap-2 md:items-center">
+          <p class="font-bold text-sm md:text-base lg:text-3xl">
+            We Provide Best Customer Experience
+          </p>
+          <p class="text-gray-600 text-xs md:text-sm lg:text-xl">
+            || We ensure that our customers have the best shopping experience
+          </p>
+        </div>
+
+        <div class="flex justify-between my-5 gap-2">
+          <div class="bg-gray-100 p-2 rounded-md w-1/4 text-center">
+            <i
+              class="fa-regular fa-circle-check my-1 text-2xl md:text-3xl lg:text-4xl mb-2"
+            ></i>
+            <h4 class="font-bold text-xs md:text-sm lg:text-base">
+              Original Products
+            </h4>
+            <p class="text-xs md:text-xs lg:text-sm">
+              Every item we sell is 100% authentic.
+            </p>
+          </div>
+          <div class="bg-gray-100 p-2 rounded-md w-1/4 text-center">
+            <i
+              class="fa-regular fa-face-smile my-1 text-2xl md:text-3xl lg:text-4xl mb-2"
+            ></i>
+            <h4 class="font-bold text-xs md:text-sm lg:text-base">
+              Satisfaction Guarantee
+            </h4>
+            <p class="text-xs md:text-xs lg:text-sm">
+              Easy returns & support for your happiness.
+            </p>
+          </div>
+          <div class="bg-gray-100 p-2 rounded-md w-1/4 text-center">
+            <i
+              class="fa-solid fa-broom my-1 text-2xl md:text-3xl lg:text-4xl mb-2"
+            ></i>
+            <h4 class="font-bold text-xs md:text-sm lg:text-base">
+              New Arrival Everyday
+            </h4>
+            <p class="text-xs md:text-xs lg:text-sm">
+              Latest trends added daily.
+            </p>
+          </div>
+          <div class="bg-gray-100 p-2 rounded-md w-1/4 text-center">
+            <i
+              class="fa-solid fa-truck-fast my-1 text-2xl md:text-3xl lg:text-4xl mb-2"
+            ></i>
+            <h4 class="font-bold text-xs md:text-sm lg:text-base">
+              Fast & Free Shipping
+            </h4>
+            <p class="text-xs md:text-xs lg:text-sm">
+              Quick delivery at no extra cost.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!--New Arrivals-->
+
+      <div id="new_arrival">
+        <h1 class="font-bold text-xl my-5 lg:text-2xl">New Arrivals</h1>
+        <div class="flex items-center justify-between gap-7 md:justify-between">
+          <div class="relative w-24 md:w-48 lg:w-64">
+            <img
+              src="./assets/products/NA_1.jpg"
+              alt="New-1"
+              class="opacity-80 w-full"
+            />
+            <button
+              class="absolute bottom-2 left-2 right-2 rounded-sm py-1 text-white md:text-sm"
+              style="background-color: #1d232c; opacity: 0.7; font-size: 10px"
+            >
+              Shop Now →
+            </button>
+          </div>
+          <div class="relative w-24 md:w-48 lg:w-64">
+            <img
+              src="./assets/products/NA_2.jpg"
+              alt="New-2"
+              class="opacity-80 w-full"
+            />
+            <button
+              class="absolute bottom-2 left-2 right-2 rounded-sm py-1 text-white text-xs md:text-sm"
+              style="background-color: #1d232c; opacity: 0.7; font-size: 10px"
+            >
+              Shop Now →
+            </button>
+          </div>
+          <div class="relative w-24 md:w-48 lg:w-64">
+            <img
+              src="./assets/products/NA_3.jpg"
+              alt="New-3"
+              class="opacity-80 w-full"
+            />
+            <button
+              class="absolute bottom-2 left-2 right-2 rounded-sm py-1 text-white text-xs md:text-sm"
+              style="background-color: #1d232c; opacity: 0.7; font-size: 10px"
+            >
+              Shop Now →
+            </button>
+          </div>
+          <div class="relative w-24 md:w-48 lg:w-64">
+            <img
+              src="./assets/products/NA_4.jpg"
+              alt="New-4"
+              class="opacity-80 w-full"
+            />
+            <button
+              class="absolute bottom-2 left-2 right-2 rounded-sm py-1 text-white text-xs md:text-sm"
+              style="background-color: #1d232c; opacity: 0.7; font-size: 10px"
+            >
+              Shop Now →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--Most Wanted-->
+
+      <div id="most_wanted">
+        <h1 class="text-xl font-bold my-5 lg:text-2xl">Most Wanted</h1>
+        <div
+          class="flex overflow-x-auto gap-4 px-2"
+          style="
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
+          "
+        >
+          <div class="w-24 md:w-48 lg:w-60 relative flex-shrink-0">
+            <img src="./assets/products/MW_1.jpg" alt="most-1" class="w-full" />
+            <span
+              class="absolute top-1 left-1 bg-red-600 text-white text-xs md:text-base lg:text-lg px-1 md:px-2 py-0.5 md:py-1 rounded"
+            >
+              SALE
+            </span>
+            <div class="absolute bottom-1 right-1 w-4 md:w-6 lg:w-8">
+              <img
+                src="./assets/icons/blackheart.png"
+                alt="heart icon"
+                class="w-full empty_heart"
+              />
+            </div>
+          </div>
+
+          <div class="w-24 md:w-48 lg:w-60 relative flex-shrink-0">
+            <img
+              src="./assets/products/MW_2.jpg"
+              alt="most-2"
+              class="w-full empty_heart"
+            />
+            <span
+              class="absolute top-1 left-1 bg-red-600 text-white text-xs md:text-base lg:text-lg px-1 md:px-2 py-0.5 md:py-1 rounded"
+            >
+              SALE
+            </span>
+            <div class="absolute bottom-1 right-1 w-4 md:w-6 lg:w-8">
+              <img
+                src="./assets/icons/blackheart.png"
+                alt="heart icon"
+                class="w-full empty_heart"
+              />
+            </div>
+          </div>
+
+          <div class="w-24 md:w-48 lg:w-60 relative flex-shrink-0">
+            <img
+              src="./assets/products/MW_3.jpg"
+              alt="most-3"
+              class="w-full empty_heart"
+            />
+            <span
+              class="absolute top-1 left-1 bg-red-600 text-white text-xs md:text-base lg:text-lg px-1 md:px-2 py-0.5 md:py-1 rounded"
+            >
+              SALE
+            </span>
+            <div class="absolute bottom-1 right-1 w-4 md:w-6 lg:w-8">
+              <img
+                src="./assets/icons/blackheart.png"
+                alt="heart icon"
+                class="w-full empty_heart"
+              />
+            </div>
+          </div>
+
+          <div class="w-24 md:w-48 lg:w-60 relative flex-shrink-0">
+            <img
+              src="./assets/products/MW_4.jpg"
+              alt="most-4"
+              class="w-full empty_heart"
+            />
+            <span
+              class="absolute top-1 left-1 bg-red-600 text-white text-xs md:text-base lg:text-lg px-1 md:px-2 py-0.5 md:py-1 rounded"
+            >
+              SALE
+            </span>
+            <div class="absolute bottom-1 right-1 w-4 md:w-6 lg:w-8">
+              <img
+                src="./assets/icons/blackheart.png"
+                alt="heart icon"
+                class="w-full empty_heart"
+              />
+            </div>
+          </div>
+
+          <div class="w-24 md:w-48 lg:w-60 relative flex-shrink-0">
+            <img
+              src="./assets/products/MW_5.jpg"
+              alt="most-5"
+              class="w-full empty_heart"
+            />
+            <span
+              class="absolute top-1 left-1 bg-red-600 text-white text-xs md:text-base lg:text-lg px-1 md:px-2 py-0.5 md:py-1 rounded"
+            >
+              SALE
+            </span>
+            <div class="absolute bottom-1 right-1 w-4 md:w-6 lg:w-8">
+              <img
+                src="./assets/icons/blackheart.png"
+                alt="heart icon"
+                class="w-full empty_heart"
+              />
+            </div>
+          </div>
+
+          <div class="w-24 md:w-48 lg:w-60 relative flex-shrink-0">
+            <img
+              src="./assets/products/MW_6.jpg"
+              alt="most-6"
+              class="w-full empty_heart"
+            />
+            <span
+              class="absolute top-1 left-1 bg-red-600 text-white text-xs md:text-base lg:text-lg px-1 md:px-2 py-0.5 md:py-1 rounded"
+            >
+              SALE
+            </span>
+            <div class="absolute bottom-1 right-1 w-4 md:w-6 lg:w-8">
+              <img
+                src="./assets/icons/blackheart.png"
+                alt="heart icon"
+                class="w-full empty_heart"
+              />
+            </div>
+          </div>
+
+          <div class="w-24 md:w-48 lg:w-60 relative flex-shrink-0">
+            <img
+              src="./assets/products/MW_8.jpg"
+              alt="most-7"
+              class="w-full empty_heart"
+            />
+            <span
+              class="absolute top-1 left-1 bg-red-600 text-white text-xs md:text-base lg:text-lg px-1 md:px-2 py-0.5 md:py-1 rounded"
+            >
+              SALE
+            </span>
+            <div class="absolute bottom-1 right-1 w-4 md:w-6 lg:w-8">
+              <img
+                src="./assets/icons/blackheart.png"
+                alt="heart icon"
+                class="w-full empty_heart"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Banner-->
+
+      <div
+        class="my-7 flex items-center gap-4 p-4 md:flex-row md:gap-24 md:p-6"
+        style="background-color: #1d232c"
+      >
+        <img
+          src="./assets/carousel/three.jpg"
+          alt="banner"
+          class="w-2/4 md:w-2/5 lg:w-1/2"
+        />
+        <div class="flex flex-col items-start text-white gap-3">
+          <h1 class="font-bold text-sm md:text-2xl lg:text-3xl">
+            Limited Offer
+          </h1>
+          <h4 class="font-bold text-xs md:text-lg lg:text-xl">
+            35% OFF on this for the first 30 Customers
+          </h4>
+          <button
+            class="bg-white text-black px-2 py-1 md:px-5 md:py-2 lg:px-6 lg:py-3 rounded"
+            style="font-size: 10px"
+          >
+            <span class="text-xs md:text-base lg:text-lg">Shop Now →</span>
+          </button>
+        </div>
+      </div>
+
+      <!--News letter-->
+      <div
+        class="flex flex-col items-center justify-center gap-2 my-5 mx-auto max-w-md"
+      >
+        <h1 class="font-bold lg:text-3xl md:text-xl">Join our News Letter</h1>
+        <p class="text-xs md:text-xl lg:text-2xl text-center max-w-2xl">
+          Signup for our email newspaper to get exclusive discounts, updates,
+          and more
+        </p>
+        <input
+          type="text"
+          class="w-full max-w-3xl border-2 border-black px-2 py-1 rounded"
+          placeholder="Enter your email"
+        />
+        <button
+          class="text-white text-xs md:text-sm p-2 rounded w-full max-w-3xl"
+          style="background-color: #1d232c"
+        >
+          Subscribe →
+        </button>
+        <!--End of container-->
+      </div>
+    </div>
+
+    <!--Footer-->
+    <div
+      style="background-color: #1d232c"
+      class="text-white p-8 flex flex-col gap-6"
+    >
+      <div>
+        <h1 class="font-bold text-sm md:text-base">Nostra</h1>
+        <p class="text-xs md:text-sm">Not Just Fashion - A Movement</p>
+      </div>
+      <div class="flex gap-10 text-sm md:text-3xl justify-start">
+        <i
+          class="fa-brands fa-square-instagram cursor-pointer hover:text-gray-400"
+        ></i>
+        <i
+          class="fa-brands fa-square-twitter cursor-pointer hover:text-gray-400"
+        ></i>
+        <i class="fa-brands fa-facebook cursor-pointer hover:text-gray-400"></i>
+      </div>
+      <p class="text-xs md:text-sm text-center md:text-right">
+        &copy; 2025 Nostra.com
+      </p>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
