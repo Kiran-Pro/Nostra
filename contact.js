@@ -62,12 +62,11 @@ submit.addEventListener("click", function (event) {
     messageRegex.test(message.value)
   ) {
     alert("Form submitted Successfully");
+    userName.value = "";
+    email.value = "";
+    subject.value = "";
+    message.value = "";
   }
-
-  userName.value = "";
-  email.value = "";
-  subject.value = "";
-  message.value = "";
 });
 
 function formCheck() {
